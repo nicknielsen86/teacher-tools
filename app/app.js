@@ -1,14 +1,24 @@
 'use strict';
 
 // Declare app level module which depends on views, and components
-angular.module('myApp', [
+angular.module('teacherTools', [
   'ngRoute',
-  'myApp.view1',
-  'myApp.view2',
-  'myApp.version'
+  'navigationBar',
+  'homePage'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
+  var routs
+  try{
+    routs = getRouts();
+  } catch(e) {
+    console.log("Warning: function 'getRouts' does not exists")
+    routs = []
+  }
   $locationProvider.hashPrefix('!');
 
-  $routeProvider.otherwise({redirectTo: '/view1'});
+  for(var i = 0; i < routs.length; i++) {
+    var rout = routs[i]
+    $routeProvider.when(rout.path, {template: rout.template});
+  }
+  $routeProvider.otherwise('/');
 }]);
