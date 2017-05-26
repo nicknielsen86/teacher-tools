@@ -1,11 +1,17 @@
 'use strict';
 
-angular.module('navigationBar', ['ngRoute']).
+angular.module('navigationBar', []).
 component('navigationBar', {
-  templateUrl: '',
+  templateUrl: 'navigation-bar/navigation-bar.template.html',
   controller: [navigationBarController]
 });
 
 function navigationBarController() {
-  // get nav items
+  var self = this;
+
+  try {
+    self.navigation = getRouts('navBar');
+  } catch (e) {
+    console.log("Warning: function 'getRouts' does not exists");
+  }
 }

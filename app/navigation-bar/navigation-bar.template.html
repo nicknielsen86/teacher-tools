@@ -1,7 +1,7 @@
 <nav>
     <ul>
-        <li ng-repeat="item in $ctrl.navigation">
-            <a href="#!/{{item.path}}">
+        <li ng-repeat="nav in $ctrl.navigation">
+            <a href="#!{{nav.path}}">{{nav.feature}}</a>
         </li>
     </ul>
 </nav>
