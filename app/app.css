@@ -23,3 +23,19 @@
   content: "|";
   padding-right: 0.3em;
 }
+
+.teacher-tools-logo {
+  display: inline-block;
+  border-radius: 50%;
+  background-color: #666666;
+  color: #FFF;
+  height: 7rem;
+  width: 7rem;
+  line-height: 7rem;
+  margin:20px;
+  padding: 0.5rem;
+  text-align: center;
+  font-weight: 700;
+  font-family: sans-serif;
+  text-decoration: none;
+}
